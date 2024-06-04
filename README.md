@@ -48,6 +48,33 @@ int main() {
 
     for (i = 1; i <= n; ++i) {
         for (j = 1; j <= n; ++j) {
-            adj[i][j] = 0;//pour chaque
+            adj[i][j] = 0;//pour chaque element , nous donnons 0
+        }
+    }
+        printf("selectionnez l'element que vous souhaitez utiliser avec la selection de ligne et de colonne : \n");
+     for (i = 1; i <= n; ++i) {
+        printf("saisie ligne et colonne de l'element de nombre %d : \n ",i);
+        scanf("%d %d" , &u, &v);
+        printf("saisie valeur de l'element : \n ");
+        scanf("%d" , &w);
+        adj[u][v] = w;
+        adj[v][u] = w;
+     }
+     printf("selectionnez le sommet (doit etre inferieur a n ) : ");
+     scanf("%d" , &start);
+
+     dijkstra(start);
+      min = distance[1];
+     for (i = 1; i <= n; ++i) {
+          printf("Distance entre %d et %d est %d\n" , start , i , distance[i]);
+          if(distance[i]<min){
+               min = distance[i] ;
+               a = i ;
+           }
+      }
+      ptrintf("Ainsi, le chemin le plus court est le chemin depuis %d a %d est %d ,start,a,min);
+      return 0;
+}
+        
     
     
